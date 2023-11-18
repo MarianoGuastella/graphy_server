@@ -9,8 +9,8 @@ Uncomment the lines of code  which have been commented below to make the applica
 const helmet = require('helmet')
 const csrf = require('csurf');
 
-app.use(helmet)
-app.use(express.csrf());
+app.use(helmet())
+app.use(csrf({ cookie: true }));
 
 // Middlewares
 const csrfProtect = csrf({ cookie: true })
